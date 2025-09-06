@@ -11,7 +11,8 @@
     --smTextSize: 0.85em;
 
     --shadowColor: #525f8014;
-    --bgWhite : #ffffff;
+    --bgWhite : #F4F4F4 ;
+    --bgGreen : #dcf1a2;
     --bgBlack : #232527;
 
     --primaryColor : #A5CD39;
@@ -90,11 +91,12 @@ nav{
     -webkit-box-shadow: 0 8px 27px -10px var(--shadowColor);
        -moz-box-shadow: 0 8px 27px -10px var(--shadowColor);
             box-shadow: 0 8px 27px -10px var(--shadowColor);
-    background-color: var(--bgWhite);
+    background-color: var(--bgGreen);
     height: var(--navHeight);
     z-index: 10;
 }
 nav::before{
+    color: var(--bgGreen);
     position: absolute;
     content: "";
     pointer-events: none;
@@ -184,7 +186,7 @@ main::before{
     background-image: -webkit-linear-gradient(bottom, var(--primaryBgBody) -50%, var(--bgWhite) 50%);
     background-image: -moz-linear-gradient(bottom, var(--primaryBgBody) -50%, var(--bgWhite) 50%);
     background-image: -o-linear-gradient(bottom, var(--primaryBgBody) -50%, var(--bgWhite) 50%);
-    background-image: linear-gradient(0deg, var(--primaryBgBody) -50%, var(--bgWhite) 50%);
+    background-image: linear-gradient(0deg, var(--primaryBgBody) -50%, var(--bgGreen)  50%);
     z-index: 0;
 }
 
@@ -306,11 +308,11 @@ section.bg-primary-foot{
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
+    /*-webkit-flex-direction: column;*/
        -moz-box-orient: vertical;
        -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        /* -ms-flex-direction: column;
+            flex-direction: column; */
     -webkit-box-align: center;
     -webkit-align-items: center;
        -moz-box-align: center;
@@ -903,11 +905,11 @@ a.fc-white{
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
+        /* -webkit-flex-direction: column; */
            -moz-box-orient: vertical;
            -moz-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+            /* -ms-flex-direction: column;
+                flex-direction: column; */
         -webkit-box-pack: center;
         -webkit-justify-content: center;
            -moz-box-pack: center;
@@ -1082,4 +1084,55 @@ a.fc-white{
     margin: 0; /* Elimina márgenes adicionales */
 }
 
+.col-wide-eflu {
+  width: 100%;
+  margin: auto;
+  gap: 20px;
+}
 
+.texto {
+  flex: 1;
+}
+
+.carrusel {
+  position: relative;
+  flex-shrink: 0;
+  width: 500px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carrusel-imagenes {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carrusel-imagenes img {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.contained-eflu{
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+}
