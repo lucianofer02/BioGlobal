@@ -123,19 +123,31 @@
     }
 }
 
-.galeria-fangos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
-  max-width: 600px;
-  margin: 30px auto;
-  justify-content: center;
+.contenedor-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Usa gap en lugar de margin para el espaciado */
 }
 
-.galeria-fangos img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+@media (max-width: 768px) {
+    .contenedor-flex {
+        display: block; /* Desactiva el flexbox y apila los elementos uno debajo del otro */
+    }
+}
+
+.servicios-contenedor {
+    width: 50%;
+    margin-left: auto; /* Centra el contenedor si lo necesitas */
+    margin-right: auto;
+}
+
+
+@media (max-width: 768px) {
+    .servicios-contenedor {
+        display: block; /* Vuelve al comportamiento por defecto (una columna) */
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        padding: 10; /* Elimina cualquier relleno que pueda causar problemas */
+        margin: 0; /* Elimina cualquier margen */
+    }
 }

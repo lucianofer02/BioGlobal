@@ -108,7 +108,7 @@ Es por eso que asumimos el compromiso de ayudar y fortalecer el vínculo entre l
                 </p>
             </div >
 
-            <div style="margin-left: 50px; width: 65%;" >
+            <div style="width: 65%;" >
                 <h2 style="text-align: center;" >TRATAMIENTO DE LOS FANGOS</h2>
                 <p class="col-wide-eflu mlmr-a ta-center">
                     En todo tratamiento de aguas residuales se producen, junto al agua depurada, una serie de lodos o fangos que deben ser tratados adecuadamente. Según el tipo de tratamiento y la naturaleza de los contaminantes eliminados, serán lodos de naturaleza predominantemente orgánica o inorgánica.
@@ -124,7 +124,7 @@ Es por eso que asumimos el compromiso de ayudar y fortalecer el vínculo entre l
                 </div>
                 <div class="row">
                     <div class="col-wide-eflu" id="fangos">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; align-items: center;">
+                        <div class="contenedor-flex">
                             <div style="flex: 2; padding-right: 20px;">
                                 <!-- INDIVIDUAL SERVICES FEATURE START -->
                                 <!-- <img src="art/hero1.webp" class="img-unheight" alt="" id="service-dev"> -->
@@ -156,19 +156,18 @@ Es por eso que asumimos el compromiso de ayudar y fortalecer el vínculo entre l
                             Compostaje, descomposición biológica controlada, de la materia orgánica, en condiciones aerobias, con el fin de obtener “compost” (abono orgánico).
                         </p>
                         </div>
-                            <div class="galeria-fangos">
+
                                 <div class="carrusel">
                                     <div class="carrusel-imagenes">
-                                        <img src="art/0f1ebbbf-f4c1-4378-b69f-a9bff14b2a6a.jpg" alt="imagen geotubo" >
-                                        <img src="art/31a4bdf3-43a8-4285-9b78-1b812f375deb.jpg" alt="imagen geotubo" >
-                                        <img src="art/800f676e-3f58-4a4f-8abf-3efc62332d5a.jpg" alt="imagen geotubo" >
-                                        <img src="art/e5dd8450-435b-4620-8917-90d0392e68a4.jpg" alt="imagen geotubo" >
+                                        <img src="./art/0f1ebbbf-f4c1-4378-b69f-a9bff14b2a6a.jpg" alt="imagen geotubo" >
+                                        <img src="./art/31a4bdf3-43a8-4285-9b78-1b812f375deb.jpg" alt="imagen geotubo" >
+                                        <img src="./art/800f676e-3f58-4a4f-8abf-3efc62332d5a.jpg" alt="imagen geotubo" >
+                                        <img src="./art/e5dd8450-435b-4620-8917-90d0392e68a4.jpg" alt="imagen geotubo" >
                                     </div>
                                     <button class="prev">←</button>
                                     <button class="next">→</button>
-                                </div>                            
-                            </div>
-
+                                </div>      
+                        </div>
                     </div>
                     </div>
                 </div>
@@ -266,9 +265,9 @@ Es por eso que asumimos el compromiso de ayudar y fortalecer el vínculo entre l
             
             
         </section>
-        <section style="width: 50%;" class="contained row" id="variedad">
-                   <h2 class="section-title ff-damion" style="text-shadow: 1px 1px 1px #3f3e3e;">Servicios</h2>
-                   <div style="margin-left: 30px;">
+        <section  class="contained row servicios-contenedor" id="variedad">
+                <h2 class="section-title ff-damion" style="text-shadow: 1px 1px 1px #3f3e3e;">Servicios</h2>
+                   <div>
                        <p>
                            A través de nuestra experiencia y trayectoria brindamos una gran variedad de servicios como por ejemplo:
                            <ul>
@@ -280,7 +279,7 @@ Es por eso que asumimos el compromiso de ayudar y fortalecer el vínculo entre l
                                <li>Alquiler de bombas.</li>
                                <li>Desagote de pozos y piletas.</li>
                            </ul>
-                   </div>                        
+                   </div>                       
         </section>
         <!-- SERVICES END -->
     </main>
@@ -382,19 +381,20 @@ Es por eso que asumimos el compromiso de ayudar y fortalecer el vínculo entre l
 </body>
 <script>
   const carrusel = document.querySelector('.carrusel-imagenes');
-  const images = document.querySelectorAll('.carrusel-imagenes img');
-  let index = 0;
-  const imageWidth = 500;
+const images = document.querySelectorAll('.carrusel-imagenes img');
+let index = 0;
 
-  document.querySelector('.next').addEventListener('click', () => {
-    index = (index + 1) % images.length;
-    carrusel.style.transform = `translateX(-${index * imageWidth}px)`;
-  });
+document.querySelector('.next').addEventListener('click', () => {
+  const imageWidth = images[0].offsetWidth; // Obtiene el ancho actual de la primera imagen
+  index = (index + 1) % images.length;
+  carrusel.style.transform = `translateX(-${index * imageWidth}px)`;
+});
 
-  document.querySelector('.prev').addEventListener('click', () => {
-    index = (index - 1 + images.length) % images.length;
-    carrusel.style.transform = `translateX(-${index * imageWidth}px)`;
-  });
+document.querySelector('.prev').addEventListener('click', () => {
+  const imageWidth = images[0].offsetWidth; // Obtiene el ancho actual de la primera imagen
+  index = (index - 1 + images.length) % images.length;
+  carrusel.style.transform = `translateX(-${index * imageWidth}px)`;
+});
 </script>
 
 </html>
