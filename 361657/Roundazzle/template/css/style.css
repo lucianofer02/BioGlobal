@@ -1148,3 +1148,15 @@ a.fc-white{
     display: flex;
     flex-direction: column;
 }
+
+
+.catalogo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.catalogo-item{
+   width: 250px;
+}
